@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>calculator(●'📱'●)</title>
+<style>
+        .calculator-container {
+            height: 450px;
+            width: 350px;
+            background-color:#E8BA40;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            border-radius: 20px;
+        }
+      
+        
+        .logo {
+            font-size: 20px;
+            color: rgb(18, 29, 173);
+            padding-top: 10px;
+            padding-left: 17px;
+        }
+        
+        .calculator-screen {
+            width: 320px;
+            height: 50px;
+            display: block;
+            padding-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(170, 180, 142);
+            font-size: 40px;
+            border-radius: 10px;
+        }
+
+        .buttons-container{
+            display:flex;
+            flex-direction:row;
+            justify-content:space-around;
+        }
+        
+        .calculator-button {
+            background-color: whitesmoke;
+            width: 80px;
+            height: 41px;
+            font-size: 20px;
+            margin: 5px;
+            border-radius: 10px;
+            border: 2px solid #9d9797;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 0px 1px 1px #808080;
+        }
+        
+        .calculator-button:hover {
+            box-shadow: 0 2px 5px rgb(20, 19, 19);
+            transition: 0.5s;
+            text-align:center;
+            color:rgb(177, 39, 163);
+            -ms-touch-action:auto;
+        }
+        
+        
+        
+        .btn-color{
+         box-shadow: 0 opx 7px rgb(154, 147, 195);
+        }
+        
+        .bg-green {
+            background-color: aqua;
+            color:rgb(243,79,48);
+        }
+
+        .size-button{
+            width:55px;
+
+        }
+
+        .font-size{
+            font-size:30px;
+        }
+       
+    </style>
+</head>
+<script>
+    function handleClick(val)
+    {
+      const inputBox = document.getElementById("calculator-screen");
+      inputBox.value = (inputBox.value + val);
+    }
+
+    function calculate()
+    {
+        const inputBox = document.getElementById("calculator-screen");
+        const ans = eval(inputBox.value);
+        inputBox.value = ans;
+    }
+
+    function clearScreen()
+    {
+        const inputBox = document.getElementById("calculator-screen");
+        inputBox.value = "";
+    }
+    
+    function calculate()
+    {
+        const inputBox = document.getElementById("calculator-screen");
+        const ans = eval(inputBox.value)
+        inputBox.value = ans;
+    }
+</script>
+
+<body>
+    <div class="calculator-container">
+        <b><p class="logo">.Casio📱</p></b>
+    
+        <input type="text" class="calculator-screen" id="calculator-screen"/>
+        <div class="buttons-container">
+            <button class="calculator-button font-size" onClick="handleClick(7)">7</button>
+            <button class="calculator-button  font-size" onClick="handleClick(8)">8</button>
+            <button class="calculator-button  font-size" onClick="handleClick(9)">9</button>
+            <button class="calculator-button" onClick="clearScreen()">CE</button>
+        </div>
+        <div class="buttons-container">
+            <button class="calculator-button  font-size" onClick="handleClick(4)">4</button>
+            <button class="calculator-button  font-size" onClick="handleClick(5)">5</button>
+            <button class="calculator-button  font-size" onClick="handleClick(6)">6</button>
+            <button class="calculator-button   btn-color font-size bg-red" onClick="handleClick('+')">+</button>
+        </div>
+        <div class="buttons-container">
+            <button class="calculator-button  font-size" onClick="handleClick(3)">3</button>
+            <button class="calculator-button  font-size" onClick="handleClick(2)">2</button>
+            <button class="calculator-button  font-size" onClick="handleClick(1)">1</button>
+            <button class="calculator-button  btn-color font-size bg-green" onClick="handleClick('-')">-</button>
+        </div>
+    
+        <div class="buttons-container">
+            <button class="calculator-button  font-size" onClick="handleClick(0)">0</button>
+            <button class="calculator-button " onClick="handleClick('sin')">sin</button>
+            <button class="calculator-button " onClick="handleClick('cos')">cos</button>
+            <button class="calculator-button  btn-color font-size bg-green" onClick="handleClick('*')">*</button>
+        </div>
+        <div class="buttons-container">
+            <button class="calculator-button" onClick="handleClick('cosec')">cosec</button>
+            <button class="calculator-button" onClick="handleClick('cot')">cot</button>
+            <button class="calculator-button" onClick="handleClick('sec')">sec</button>
+            <button class="calculator-button  btn-color font-size bg-green" onClick="handleClick('/')">/</button>
+        </div>
+        <div class="buttons-container">
+            <button class="calculator-button size-button" onClick="handleClick('tan')">tan</button>
+            <button class="calculator-button  btn-color font-size bg-green" onClick="handleClick('%')">%</button>
+            <button class="calculator-button  btn-color font-size bg-green" onClick="handleClick('^')">^</button>
+            <button class="calculator-button  btn-color font-size bg-green" onClick=calculate()>=</button>
+        </div>
+
+    </div>
+</body>
+
+</html>
